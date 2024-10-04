@@ -63,3 +63,8 @@ FROM Alunos
 INNER JOIN Turmas ON Alunos.turma_id = Turmas.turma_id
 INNER JOIN Turma_Professor ON Turmas.turma_id = Turma_Professor.turma_id
 INNER JOIN Professores ON Turma_Professor.professor_id = Professores.professor_id; 
+
+SELECT Professores.nome
+FROM Professores
+LEFT JOIN Turma_Professor ON Professores.professor_id = Turma_Professor.professor_id
+WHERE Turma_Professor.turma_id IS NULL;
